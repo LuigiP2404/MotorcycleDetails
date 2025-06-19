@@ -90,7 +90,7 @@ const Home = () => {
     }, [selectedModel]);
 
     const fetchMotorcycles = () => {
-        fetch('/data/motorcycles.json')
+        fetch(`${process.env.PUBLIC_URL}/data/motorcycles.json`)
             .then(response => response.json())
             .then(data => {
                 updateJsonData(data)
@@ -249,7 +249,7 @@ const Home = () => {
                             <select value={selectedMake} onChange={e => updateSelectedMake(e.target.value)}>
                                 <option value="" hidden>Make</option>
                                 {makes.map((make) => {
-                                    return <option value={make}>{make}</option>
+                                    return <option key={make} value={make}>{make}</option>
                                 })}
                             </select>
                         </div>
@@ -257,7 +257,7 @@ const Home = () => {
                             <select disabled={!selectedMake} value={selectedModel} onChange={e => updateSelectedModel(e.target.value)}>
                                 <option value="" hidden>Model</option>
                                 {models.map((model) => {
-                                    return <option value={model}>{model}</option>
+                                    return <option key={model} value={model}>{model}</option>
                                 })}
                             </select>
                         </div>
@@ -265,16 +265,16 @@ const Home = () => {
                             <select disabled={!selectedModel} value={selectedYear} onChange={e => updateSelectedYear(e.target.value)}>
                                 <option value="" hidden>Year</option>
                                 {years.map((year) => {
-                                    return <option value={year}>{year}</option>
+                                    return <option key={year} value={year}>{year}</option>
                                 })}
                             </select>
                         </div>
                     </div>
-                    <button onClick={search} className="search-button">
+                    <button onClick={search} className="search-button" disabled={!selectedYear}>
                         Search
                     </button>
                 </div>
-                {selectedBike && !noDataFound ? <BikeDetails bikeFullName={selectedBikeStr} bikeModel={bikeDetails} imgSrc={`/assets/img/${selectedBike}.jpg`} /> : <></>}
+                {selectedBike && !noDataFound ? <BikeDetails bikeFullName={selectedBikeStr} bikeModel={bikeDetails} imgSrc={`${process.env.PUBLIC_URL}/assets/img/${selectedBike.toLocaleLowerCase()}.jpg`} /> : <></>}
                 {noDataFound ? <NoDataFound removeFilters={clear} /> : <></>}
             </div>
         </div>

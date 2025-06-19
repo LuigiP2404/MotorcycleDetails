@@ -79,10 +79,15 @@
         margin-inline: auto;
         margin-top: 30px;
 
-        &:hover {
+        &:hover:not(:disabled) {
             color: rgb(3, 169, 219);
             background: #fff;
             border: 1px solid rgb(3, 169, 219);
+        }
+
+        &:disabled {
+            background: rgba(0,0,0,0.4);
+            cursor: not-allowed;
         }
     }
 }
