@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/MotorcycleDetails/static/css/main.ed783bca.css",
-    "main.js": "/MotorcycleDetails/static/js/main.d0db38eb.js",
+    "main.js": "/MotorcycleDetails/static/js/main.4de54efa.js",
     "static/js/453.a6c21701.chunk.js": "/MotorcycleDetails/static/js/453.a6c21701.chunk.js",
     "index.html": "/MotorcycleDetails/index.html",
     "main.ed783bca.css.map": "/MotorcycleDetails/static/css/main.ed783bca.css.map",
-    "main.d0db38eb.js.map": "/MotorcycleDetails/static/js/main.d0db38eb.js.map",
+    "main.4de54efa.js.map": "/MotorcycleDetails/static/js/main.4de54efa.js.map",
     "453.a6c21701.chunk.js.map": "/MotorcycleDetails/static/js/453.a6c21701.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed783bca.css",
-    "static/js/main.d0db38eb.js"
+    "static/js/main.4de54efa.js"
   ]
 }
